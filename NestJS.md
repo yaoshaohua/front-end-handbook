@@ -6,7 +6,7 @@
 
 Web 框架指的是开发 HTTP(S) API 服务的框架
 
-### 第一层：Web 框架的基础，Node.js 提供了 HTTP(S) 模块用于处理协议数据
+### 第一层：Web 框架的基础，[Node.js](https://github.com/nodejs/node) 提供了 HTTP(S) 模块用于处理协议数据
 
 创建一个简单的 HTTP 服务器：
 
@@ -42,7 +42,7 @@ server.listen(8080, '127.0.0.1', () => {
 
 因此，一般使用 Express、Koa、Fastify 这类 Web 框架。
 
-### 第二层：简约框架 Express、Koa、Fastify
+### 第二层：简约框架 [Express](https://github.com/expressjs/express)、[Koa](https://github.com/koajs/koa)、[Fastify](https://github.com/fastify/fastify)
 
 1. 提供了路由机制，无需手动判断 method 和 path
 
@@ -84,10 +84,12 @@ server.listen(8080, '127.0.0.1', () => {
 
 局限性：
 
-没有规定代码应该怎么组织，怎么复用、怎么集成各种方案，代码可以写出各种样子，对于大型项目开发来说较难维护
+没有提供代码组织规范，如代码应该怎么组织、复用、集成各种方案，对于大型项目开发来说较难维护
 
-因此，出现了更上层的框架，Nest、Egg、Midway，他们提供了额外的架构能力。
+因此，出现了更上层的 MVC 框架，Nest、Midway、Egg，他们提供了额外的架构能力。
 
-### 第三层：企业级开发框架，Nest、Egg、Midway
+### 第三层：企业级开发框架，[Nest](https://github.com/nestjs/nest)、Egg、[Midway](https://github.com/midwayjs/midway)
 
 Nest 底层基于 Express，封装出了 IOC、AOP 等架构特性
+
+## Nest.js
