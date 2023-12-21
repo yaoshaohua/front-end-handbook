@@ -1,0 +1,124 @@
+# Nest.js 中的 IOC
+
+IOC（控制反转）是面向对象编程中的一种设计模式，而 DI（依赖注入）则是为了实现 IOC 的一种技术，就是把对象或依赖的实例化交给 IOC 容器处理
+
+## 传统耦合代码
+
+```js
+// name.ts
+class Name {
+  name: string
+  constructor(name: string) {
+    this.name = name
+  }
+}
+
+// person.ts
+class Person {
+  age: number
+  name: Name
+  constructor(age: number) {
+    this.age = age
+    this.name = new Name('Tony')
+  }
+}
+
+// main.ts
+const p = new Person(18)
+```
+
+## IOC容器，实现类与类之间的解耦，简易版 IOC
+
+```js
+// container.ts
+export class Container {
+  modules = new Map()
+
+  // 注册实例
+  provide(key: string, clazz: any, argvs: Array<any>) {
+    this.modules.set(key, { clazz, argvs })
+  }
+  // 获取实例
+  get(key: string) {
+    const { clazz, argvs } = this.modules.get(key)
+    // 相当于 new clazz(argvs)
+    return Reflect.construct(clazz, argvs)
+  }
+}
+```
+
+## Nest 中的 IOC 与 DI
+
+在 Nest 中 IOC 容器就是 NestJS 的运行时系统，当需要一个对象实例的时候，不需要手动 new xxClass()，只需在合适的地方对类进行注册，在需要的地方直接注入，容器自动完成 new 的动作。
+
+在 Nest 中使用依赖注入分三步：
+
+1. 声明定义
+
+    使用 @Injectable 装饰器来声明一个类，表示该类可以由 Nest 的 IOC 容器管理
+
+    ```js
+    // cats.service.ts
+    import { Injectable } from '@nestjs/common';
+    import { Cat } from './interfaces/cat.interface';
+
+    @Injectable()
+    export class CatsService {
+      private readonly cats: Cat[] = [];
+
+      create(cat: Cat) {
+        this.cats.push(cat);
+      }
+
+      findAll(): Cat[] {
+        return this.cats;
+      }
+    }
+    ```
+  
+2. 声明使用
+
+    在类构造函数 constructor 中注入
+
+    ```js
+    // cats.controller.ts
+    import { Controller, Get, Post, Body } from '@nestjs/common';
+    import { CreateCatDto } from './dto/create-cat.dto';
+    import { CatsService } from './cats.service';
+    import { Cat } from './interfaces/cat.interface';
+
+    @Controller('cats')
+    export class CatsController {
+      constructor(private catsService: CatsService) {}
+
+      @Post()
+      async create(@Body() createCatDto: CreateCatDto) {
+        this.catsService.create(createCatDto);
+      }
+
+      @Get()
+      async findAll(): Promise<Cat[]> {
+        return this.catsService.findAll();
+      }
+    }
+    ```
+
+    catsService 称为 token，Nest 根据 token 在 IOC 容器中找到第一步声明的类（对应关系在第三步中进行关联注册），从而提供对应的实例。实例全局唯一，在首次使用时 Nest 会 new 一个实例，然后缓存起来，以便后续使用。
+
+3. 建立注入依赖和容器中类的联系
+
+    依赖注入后还需在 Module 中进行关联
+
+    ```js
+    cats/cats.module.tsJS
+
+    import { Module } from '@nestjs/common';
+    import { CatsController } from './cats.controller';
+    import { CatsService } from './cats.service';
+
+    @Module({
+      controllers: [CatsController],
+      providers: [CatsService],
+    })
+    export class CatsModule {}
+    ```

@@ -1,12 +1,10 @@
-# NestJS
-
-## Node.js Web 框架的三个层次
+# Node.js Web 框架的三个层次
 
 ![Alt text](assets/web-framework.png)
 
 Web 框架指的是开发 HTTP(S) API 服务的框架
 
-### 第一层：Web 框架的基础，[Node.js](https://github.com/nodejs/node) 提供了 HTTP(S) 模块用于处理协议数据
+## 第一层：Web 框架的基础，[Node.js](https://github.com/nodejs/node) 提供了 HTTP(S) 模块用于处理协议数据
 
 创建一个简单的 HTTP 服务器：
 
@@ -42,7 +40,7 @@ server.listen(8080, '127.0.0.1', () => {
 
 因此，一般使用 Express、Koa、Fastify 这类 Web 框架。
 
-### 第二层：简约框架 [Express](https://github.com/expressjs/express)、[Koa](https://github.com/koajs/koa)、[Fastify](https://github.com/fastify/fastify)
+## 第二层：简约框架 [Express](https://github.com/expressjs/express)、[Koa](https://github.com/koajs/koa)、[Fastify](https://github.com/fastify/fastify)
 
 1. 提供了路由机制，无需手动判断 method 和 path
 
@@ -88,8 +86,15 @@ server.listen(8080, '127.0.0.1', () => {
 
 因此，出现了更上层的 MVC 框架，Nest、Midway、Egg，他们提供了额外的架构能力。
 
-### 第三层：企业级开发框架，[Nest](https://github.com/nestjs/nest)、Egg、[Midway](https://github.com/midwayjs/midway)
+## 第三层：企业级开发框架，[Nest](https://github.com/nestjs/nest)、Egg、[Midway](https://github.com/midwayjs/midway)
 
 Nest 底层基于 Express，封装出了 IOC、AOP 等架构特性
 
-## Nest.js
+1. 默认使用 TypeScript，也支持 JavaScript
+2. HTTP 服务器框架默认使用 Express，也可以选择 Fastify
+3. MVC 模式，代码明确划分 Controller、Service、Model、View
+4. 核心概念：Controller、Service、Module
+
+![!\[Alt text\](image.png)](assets/code-structure.png)
+
+![Alt text](assets/nest.js.png)
