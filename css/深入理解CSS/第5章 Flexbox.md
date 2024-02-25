@@ -20,6 +20,8 @@
 
 ![alt text](https://github.com/yaoshaohua/markdowndocs/blob/main/assets/css/5-1-3.png?raw=true)
 
-### 弹性子元素，设置 `margin: auto` 会填充所有可用空间
+### 弹性子元素的 `margin: auto` 会填充所有可用空间
 
 ![alt text](https://github.com/yaoshaohua/markdowndocs/blob/main/assets/css/5-1-4.png?raw=true)
+
+![alt text](https://github.com/yaoshaohua/markdowndocs/blob/main/assets/css/5-1-5.png?raw=true)
