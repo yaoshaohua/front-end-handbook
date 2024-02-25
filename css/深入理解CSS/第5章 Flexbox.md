@@ -24,7 +24,7 @@
 
 如何实现 `div1-3`居左对齐，`div4` 居右对齐？
 
-给 div4 设置 `margin-left: auto`，`auto` 外边距会填充所有可用空间，把 `div4` 推到了最右边
+给 div4 设置 `margin-left: auto`，`auto` 外边距会填充所有可用空间，把 `div4` 推到最右边
 
 ![alt text](https://github.com/yaoshaohua/markdowndocs/blob/main/assets/css/5-1-4.png?raw=true)
 
