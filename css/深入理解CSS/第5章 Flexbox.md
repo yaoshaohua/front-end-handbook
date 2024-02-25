@@ -2,7 +2,7 @@
 
 弹性盒子布局（Flexible Box Layout）
 
-## 弹性容器、弹性子元素、主/副轴
+## 弹性容器、弹性子元素、主轴、交叉轴
 
 给元素添加 `display: flex/inline-flex`，该元素变成一个**弹性容器（`flex container`）**，它的直接子元素变成了**弹性子元素（`flex item`）**
 
@@ -20,10 +20,16 @@
 
 ![alt text](https://github.com/yaoshaohua/markdowndocs/blob/main/assets/css/5-1-3.png?raw=true)
 
-### 弹性子元素的 `margin: auto` 会填充所有可用空间
+### `margin` 控制子元素间距
 
-div4 设置 `margin-left: auto`，这个外边距填充所有可用空间，div4 就被推到了最右侧
+如何实现 `div1-3`居左对齐，`div4` 居右对齐？
+
+给 div4 设置 `margin-left: auto`，`auto` 外边距会填充所有可用空间，把 `div4` 推到了最右边
 
 ![alt text](https://github.com/yaoshaohua/markdowndocs/blob/main/assets/css/5-1-4.png?raw=true)
 
 ![alt text](https://github.com/yaoshaohua/markdowndocs/blob/main/assets/css/5-1-5.png?raw=true)
+
+### `gap` 属性控制子元素间距
+
+同 `grid` 布局，`gap`、`row-gap`、`column-gap`
