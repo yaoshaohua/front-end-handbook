@@ -10,17 +10,7 @@
 
 ![alt text](https://github.com/yaoshaohua/markdowndocs/blob/main/assets/css/5-1-1.png?raw=true)
 
-### 行内元素设置 line-height 无效
-
-**行内元素，设置 `line-height`，最终作用的地方不是自身，而是自身所在的行框盒子**
-
-**行内元素，它给父元素贡献的高度会根据行高计算**
-
-![alt text](https://github.com/yaoshaohua/markdowndocs/blob/main/assets/css/5-1-2.png?raw=true)
-
-![alt text](https://github.com/yaoshaohua/markdowndocs/blob/main/assets/css/5-1-3.png?raw=true)
-
-### `margin` 控制子元素间距
+### `margin` 控制弹性子元素间距
 
 如何实现 `div1-3`居左对齐，`div4` 居右对齐？
 
@@ -30,6 +20,18 @@
 
 ![alt text](https://github.com/yaoshaohua/markdowndocs/blob/main/assets/css/5-1-5.png?raw=true)
 
-### `gap` 属性控制子元素间距
+### `gap` 属性控制弹性子元素间距
 
 同 `grid` 布局，`gap`、`row-gap`、`column-gap`
+
+## 其他
+
+### 行内元素设置 line-height 无效
+
+**行内元素，设置 `line-height`，最终作用的地方不是自身，而是自身所在的行框盒子**
+
+**行内元素，它给父元素贡献的高度会根据行高计算**
+
+![alt text](https://github.com/yaoshaohua/markdowndocs/blob/main/assets/css/5-1-2.png?raw=true)
+
+![alt text](https://github.com/yaoshaohua/markdowndocs/blob/main/assets/css/5-1-3.png?raw=true)
