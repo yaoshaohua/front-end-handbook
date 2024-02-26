@@ -2,36 +2,40 @@
 
 弹性盒子布局（Flexible Box Layout）
 
-## 弹性容器、弹性子元素、主轴、交叉轴
+通用 `flex` 布局流程：
+
+1. 创建 `flex` 容器，给容器设置 `display: flex`
+
+2. 如有必要，给容器设置 `flex-direction`
+
+3. 给 `flex` 子元素设置 `margin` 或者 `flex` 属性，用来控制大小
+
+4. 其他属性，对齐、间距、换行、顺序等
+
+## 基本概念：弹性容器、弹性子元素、主轴、交叉轴
 
 给元素添加 `display: flex/inline-flex`，该元素变成一个**弹性容器（`flex container`）**，它的直接子元素变成了**弹性子元素（`flex item`）**
 
-`flex` 创建的弹性容器，行为类似 `block` 元素，默认 `width: 100%`，`inline-flex` 则类似 `inline-block`，宽度由内容决定
+`flex` 创建的弹性容器，行为类似于 `block` 元素，默认 `width: 100%`  
+
+`inline-flex` 创建的弹性容器，则类似于 `inline-block` 元素，宽度由内容决定
 
 ![alt text](https://github.com/yaoshaohua/markdowndocs/blob/main/assets/css/5-1-1.png?raw=true)
 
-### `margin` 控制弹性子元素间距
+## 弹性子元素的宽度
 
-如何实现 `div1-3`居左对齐，`div4` 居右对齐？
+### `flex` 属性
 
-给 div4 设置 `margin-left: auto`，`auto` 外边距会填充所有可用空间，把 `div4` 推到最右边
+`flex` 属性是三个属性的简写：`<flex-grow> <flex-shrink> <flex-basis>`，用来控制弹性子元素在主轴方向上的宽度
 
-![alt text](https://github.com/yaoshaohua/markdowndocs/blob/main/assets/css/5-1-4.png?raw=true)
+接下来看看三个属性分别表示什么。先从 `flex-basis` 开始，因为其余两个属性都基于 `flex-basis`。
 
-![alt text](https://github.com/yaoshaohua/markdowndocs/blob/main/assets/css/5-1-5.png?raw=true)
+### `flex-basis`
 
-### `gap` 属性控制弹性子元素间距
+指定了 `flex` 子元素在主轴方向上的**初始大小**
 
-同 `grid` 布局，`gap`、`row-gap`、`column-gap`
+![alt text](https://github.com/yaoshaohua/markdowndocs/blob/main/assets/css/5-2-1.png?raw=true)
 
-## 其他
+### `flex-grow`
 
-### 行内元素设置 line-height 无效
-
-**行内元素，设置 `line-height`，最终作用的地方不是自身，而是自身所在的行框盒子**
-
-**行内元素，它给父元素贡献的高度会根据行高计算**
-
-![alt text](https://github.com/yaoshaohua/markdowndocs/blob/main/assets/css/5-1-2.png?raw=true)
-
-![alt text](https://github.com/yaoshaohua/markdowndocs/blob/main/assets/css/5-1-3.png?raw=true)
+### `flex-shrink`
