@@ -1,10 +1,10 @@
 # 第 5 章 Flexbox
 
-弹性盒子布局（`Flexible Box Layout`）
+弹性盒子布局（`Flexible Box Layout`），属于一维布局
 
 一维布局，一次只能处理一个维度上的元素布局，一行或者一列
 
-二维布局，`Grid Layout`，可以同时处理行和列上的布局
+二维布局，可以同时处理行和列上的布局，如 `Grid Layout`
 
 ## flex 容器、flex 子元素
 
@@ -20,7 +20,7 @@
 
 `flex-direction` 指定主轴方向，交叉轴垂直于主轴
 
-`flex-direction` 的 4 个取值：
+取值：
 
 - `row` 文本排成行的方向，`ltr` 从左到右
 
@@ -50,9 +50,9 @@
 
 ## 多行 flex 容器
 
-是否允许换行，如果允许换行，控制行的堆叠方向
+是否允许换行，如果允许换行，指定行的堆叠方向
 
-`flex-wrap` 的 3 个取值：`nowrap`、`wrap`、`wrap-reverse`
+取值：`nowrap`、`wrap`、`wrap-reverse`
 
 ![alt text](https://github.com/yaoshaohua/markdowndocs/blob/main/assets/css/5-4-1.png?raw=true)
 
@@ -60,17 +60,9 @@
 
 ## flex 子元素大小（在主轴上的比例）
 
-`flex` 属性是三个属性的简写：`<flex-grow> <flex-shrink> <flex-basis>`
-
 ### `flex-basis`
 
 指定了 flex 子元素在主轴方向上的**初始大小**
-
-**初始值为 `auto`，在 `flex` 属性中省略时默认值为 `0%`**
-
-**当 `flex-basis` 为 `auto` 时，`flex-basis = width || 元素内容大小`，其他情况，忽略 `width` 属性**
-
-**`flex-basis`优先级高于 `width` 属性**
 
 取值：
 
@@ -82,24 +74,47 @@
 
     基于 flex 子元素的内容自动调整大小
 
+注意：
+
+<!-- 1. 初始值为 `auto`，在 `flex` 属性中省略时默认值为 `0%` -->
+
+- 当 `flex-basis` 为 `auto` 时，`flex-basis = width || 元素内容大小`，其他情况，忽略 `width` 属性
+
+- `flex-basis`优先级高于 `width` 属性
+
 ### 可用空间
 
-**可用空间：flex 容器里除了元素所占的空间以外的富余空间**
+flex 容器里除了元素所占的空间以外的富余空间
 
 **可用空间 = flex 容器宽度 - 所有 flex 子元素的 `flex-basis` - `margin` - `padding` - `border`**
 
-- 可用空间为正（没填满），按照 `flex-grow` ，将可用空间分配给每个 flex 子元素
+- 可用空间为正（没填满），根据 `flex-grow` 将可用空间分配给每个 flex 子元素
 
-- 可用空间为负（溢出），按照 `flex-shrink` 收缩每个 flex 子元素
+- 可用空间为负（溢出），根据 `flex-shrink` 收缩每个 flex 子元素
 
 ### `flex-grow`
 
-非负整数，`0`：不增长。值越大，元素的“权重”越高，占据更大的可用空间
+非负整数
 
-**初始值为 `0`，在 `flex` 属性中省略时默认值为 `1`**
+`0`：不增长
+
+值越大，元素的“权重”越高，占据更大的可用空间
 
 ### `flex-shrink`
 
-非负整数，`0`：不收缩。值越大，收缩得越多
+非负整数
 
-**初始值为 `1`，在 `flex` 属性中省略时默认值为 `1`**
+`0`：不收缩
+
+值越大，收缩得越多
+
+### `flex`
+
+`<flex-grow> <flex-shrink> <flex-basis>` 三个属性的简写
+
+| 属性 | 初始值 | `flex` 中省略时默认值 |
+| :-----| :----| :---- |
+| `flex-grow` | `0` | `1` |
+| `flex-shrink` | `1` | `1` |
+| `flex-basis` | `auto` | `0%`|
+
