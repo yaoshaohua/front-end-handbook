@@ -14,7 +14,7 @@
 
 `flex` 创建的弹性容器，行为类似于 `block` 元素，**默认 `width: 100%`**
 
-`inline-flex` 创建的弹性容器，则类似于 `inline-block` 元素，宽度由元素内容决定
+`inline-flex` 创建的弹性容器，则类似于 `inline-block` 元素，**宽度由元素内容决定**
 
 ## 主轴、交叉轴
 
