@@ -54,7 +54,7 @@
 
 是否允许换行，如果允许换行，指定行的堆叠方向
 
-取值：`nowrap`、`wrap`、`wrap-reverse`
+取值：`nowrap`、`wrap`、`wrap-reverse`（换行、轴线从下到上）
 
 ![alt text](https://github.com/yaoshaohua/markdowndocs/blob/main/assets/css/5-4-1.png?raw=true)
 
@@ -110,6 +110,8 @@ flex 容器里除了元素所占的空间以外的富余空间
 
 值越大，收缩得越多
 
+如果 `flex-wrap` 设置了换行，则会忽略该属性
+
 ### `flex`
 
 `<flex-grow> <flex-shrink> <flex-basis>` 三个属性的简写
@@ -138,6 +140,10 @@ flex 容器里除了元素所占的空间以外的富余空间
 
 ### 主轴上的对齐 `justify-content`
 
+**当元素未填满容器时**，`justify-content` 控制子元素沿主轴方向的间距。也就是说，如果任意子元素的 `flex-grow` 不为 `0`，或者任意子元素**在主轴方向的外边距为`auto`**，`justify-content` 就失效了。
+
+取值：
+
 - 位置对齐：`flex-start`、`flex-end`、`center`
 
 - 分布对齐：`space-between`、`space-around`、`stretch`
@@ -146,7 +152,7 @@ flex 容器里除了元素所占的空间以外的富余空间
 
 ### 交叉轴上的对齐 `align-items`
 
-`flex-start`、`flex-end`、`center`、`stretch`、`baseline`
+`flex-start`、`flex-end`、`center`、**`stretch`**、`baseline`
 
 ### 多条主轴的 flex 子元素在交叉轴的对齐 `align-content`
 
@@ -156,7 +162,9 @@ flex 容器里除了元素所占的空间以外的富余空间
 
 ### 单个 flex 子元素在交叉轴上的对齐 `align-self`
 
-默认值 `auto`，其他取值同 `align-items`
+默认值 `auto`（设置为父元素的 align-items 值），其他取值同 `align-items`
+
+如果 flex 子元素在交叉轴方向上的外边距为 `auto`，则会忽略该属性
 
 ### 单个 flex 子元素在主轴上的对齐，`margin: auto`
 
