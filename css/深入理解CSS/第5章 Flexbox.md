@@ -22,11 +22,11 @@
 
 取值：
 
-- `row` 文本排成行的方向，`ltr` 从左到右
+- **`row`**：文本排成行的方向，`ltr` 从左到右
 
 - `row-reverse`
 
-- `column` 文本行堆叠的方向，从上到下
+- `column`：文本行堆叠的方向，从上到下
 
 - `column-reverse`
 
@@ -40,11 +40,11 @@
 
 ![alt text](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox/basics4.svg)
 
-**默认情况下，flex 子元素被拉伸来填充交叉轴大小**
+默认情况下，flex 子元素被拉伸来**填充交叉轴大小**
 
 ## 起始线、终止线
 
-如果 `flex-direction: row`，并且 `ltr`，那么主轴的起始线是左边，终止线是右边，交叉轴的起始线是 flex 容器的顶部，终止线是底部。
+`flex-direction: row`，并且 `ltr`，那么主轴的起始线是左边，终止线是右边，交叉轴的起始线是 flex 容器的顶部，终止线是底部。
 
 ![alt text](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox/basics5.svg)
 
@@ -76,9 +76,9 @@
 
 注意：
 
-<!-- 1. 初始值为 `auto`，在 `flex` 属性中省略时默认值为 `0%` -->
+- `flex-basis` 为 `auto` 时，`flex-basis = width || 元素内容大小`；
 
-- 当 `flex-basis` 为 `auto` 时，`flex-basis = width || 元素内容大小`，其他情况，忽略 `width` 属性
+- `flex-basis` 非 `auto` 时，直接忽略 `width` 属性，`flex-basis = flex-basis || 元素内容大小`，
 
 - `flex-basis`优先级高于 `width` 属性
 
@@ -118,3 +118,16 @@ flex 容器里除了元素所占的空间以外的富余空间
 | `flex-shrink` | `1` | `1` |
 | `flex-basis` | `auto` | `0%`|
 
+常用值：
+
+- `flex: 1`
+
+  `flex: 1 1 0%`
+
+- `flex: auto`
+
+  `flex: 1 1 auto`，元素会根据自身宽高来设置尺寸，会伸长并吸收 flex 容器中额外的自由空间，也会缩短自身来适应 flex 容器。
+
+- `flex: none`
+
+   `flex: 0 0 auto`，元素会根据自身宽高来设置尺寸，它是完全非弹性的：既不会伸长来适应 flex 容器，也不会缩短
