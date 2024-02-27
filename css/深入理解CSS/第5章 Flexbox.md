@@ -131,3 +131,33 @@ flex 容器里除了元素所占的空间以外的富余空间
 - `flex: none`
 
    `flex: 0 0 auto`，元素会根据自身宽高来设置尺寸，它是完全非弹性的：既不会伸长来适应 flex 容器，也不会缩短
+
+## 对齐、间距
+
+### 主轴上的对齐 `justify-content`
+
+- 位置对齐：`flex-start`、`flex-end`、`center`
+
+- 分布对齐：`space-between`、`space-around`、`stretch`
+
+`stretch` 均匀排列每个元素，但是由于拉伸是由 `flex` 属性控制的，所以 `stretch` 的行为与 `flex-start` 相同。
+
+### 交叉轴上的对齐 `align-items`
+
+`flex-start`、`flex-end`、`center`、`stretch`、`baseline`
+
+### 多条主轴的 flex 子元素在交叉轴的对齐 `align-content`
+
+同 `justify-content`
+
+### 单个 flex 子元素在交叉轴上的对齐 `align-self`
+
+默认值 `auto`，其他取值同 `align-items`
+
+### 单个 flex 子元素在主轴上的对齐，`margin: auto`
+
+`div1-3` 居左对齐，`div4` 居右对齐  
+
+![alt text](https://github.com/yaoshaohua/markdowndocs/blob/main/assets/css/5-1-4.png?raw=true)
+
+![alt text](https://github.com/yaoshaohua/markdowndocs/blob/main/assets/css/5-1-5.png?raw=true)
