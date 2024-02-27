@@ -1,5 +1,7 @@
 # 第 5 章 Flexbox
 
+![alt text](https://github.com/yaoshaohua/markdowndocs/blob/main/assets/css/5-0-0.png?raw=true)
+
 弹性盒子布局（`Flexible Box Layout`），属于一维布局
 
 一维布局，一次只能处理一个维度上的元素布局，一行或者一列
@@ -147,6 +149,8 @@ flex 容器里除了元素所占的空间以外的富余空间
 `flex-start`、`flex-end`、`center`、`stretch`、`baseline`
 
 ### 多条主轴的 flex 子元素在交叉轴的对齐 `align-content`
+
+如果 `flex-direction: row`，那就是每行之间空间的分配
 
 同 `justify-content`
 
