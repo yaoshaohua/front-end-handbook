@@ -70,11 +70,11 @@
 
 - <'width'>
 
-    **`auto`**，`px`、`em`、百分比（相对于 flex 容器主轴尺寸）
+  **`auto`**，`px`、`em`、百分比（相对于 flex 容器主轴尺寸）
 
 - 关键词 `content`
 
-    基于 flex 子元素的内容自动调整大小
+  基于 flex 子元素的内容自动调整大小
 
 注意：
 
@@ -116,11 +116,11 @@ flex 容器里除了元素所占的空间以外的富余空间
 
 `<flex-grow> <flex-shrink> <flex-basis>` 三个属性的简写
 
-| 属性 | 初始值 | `flex` 中省略时默认值 |
-| :-----| :----| :---- |
-| `flex-grow` | `0` | `1` |
-| `flex-shrink` | `1` | `1` |
-| `flex-basis` | `auto` | `0%`|
+| 属性          | 初始值 | `flex` 中省略时默认值 |
+| :------------ | :----- | :-------------------- |
+| `flex-grow`   | `0`    | `1`                   |
+| `flex-shrink` | `1`    | `1`                   |
+| `flex-basis`  | `auto` | `0%`                  |
 
 常用值：
 
@@ -134,7 +134,7 @@ flex 容器里除了元素所占的空间以外的富余空间
 
 - `flex: none`
 
-   `flex: 0 0 auto`，元素会根据自身宽高来设置尺寸，它是完全非弹性的：既不会伸长来适应 flex 容器，也不会缩短
+  `flex: 0 0 auto`，元素会根据自身宽高来设置尺寸，它是完全非弹性的：既不会伸长来适应 flex 容器，也不会缩短
 
 ## 对齐、间距
 
@@ -168,7 +168,7 @@ flex 容器里除了元素所占的空间以外的富余空间
 
 ### 单个 flex 子元素在主轴上的对齐，`margin: auto`
 
-`div1-3` 居左对齐，`div4` 居右对齐  
+`div1-3` 居左对齐，`div4` 居右对齐
 
 ![alt text](https://github.com/yaoshaohua/markdowndocs/blob/main/assets/css/5-1-4.png?raw=true)
 
