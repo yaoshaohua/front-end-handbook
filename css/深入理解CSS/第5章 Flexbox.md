@@ -173,3 +173,11 @@ flex 容器里除了元素所占的空间以外的富余空间
 ![alt text](https://github.com/yaoshaohua/markdowndocs/blob/main/assets/css/5-1-4.png?raw=true)
 
 ![alt text](https://github.com/yaoshaohua/markdowndocs/blob/main/assets/css/5-1-5.png?raw=true)
+
+## 应用场景
+
+- 水平垂直居中
+
+- 两栏三栏自适应布局
+
+- 等高列
